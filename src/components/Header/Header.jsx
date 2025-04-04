@@ -1,11 +1,11 @@
-import reactImg from "../assets/react-core-concepts.png";
-
+import reactImg from "../../assets/react-core-concepts.png";
+import "./Header.css";
 const reactDesc = ["Fundamental","Crucial","Essential","Core"];
 
 function getRandomInt (max) {
   return Math.floor(Math.random() * (max + 1));
 }
-
+  
 export default function Header() {
   const desc = reactDesc[getRandomInt(3)];
   return (
