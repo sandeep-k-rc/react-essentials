@@ -1,6 +1,6 @@
 import { useState } from "react";
-
 import { CORE_CONCEPTS, EXAMPLES } from "./data.js";
+
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import { CoreConceptObj } from "./components/CoreConcept.jsx";
