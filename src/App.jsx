@@ -1,5 +1,9 @@
 const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
 import reactImage from './assets/react-core-concepts.png';
+import componentImg from './assets/components.png';
+import propsImg from './assets/config.png';
+import jsxImg from './assets/jsx-ui.png';
+import stateImg from './assets/state-mgmt.png';
 
 
 function genRandomInt(max) {
@@ -19,12 +23,46 @@ function Header() {
     </header>
   );
 }
+function CoreConcepts(props) {
+  return (
+    <li>
+      <img src={props.img} alt="{props.title}" />
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
+    </li>
+  );
+}
 
 function App() {
   return (
     <div>
       <Header />
       <main>
+        <section id="core-concepts">
+          <h2>Core Concepts</h2>
+          <ul>
+            <CoreConcepts
+              img={componentImg}
+              title="Components"
+              description="Reusable building blocks of a React application."
+            />
+            <CoreConcepts
+              img={propsImg}
+              title="Props"
+              description="Data passed to components to customize their behavior."
+            />
+            <CoreConcepts
+              img={jsxImg}
+              title="JSX"
+              description="Syntax extension for JavaScript that looks similar to XML."
+            />
+            <CoreConcepts
+              img={stateImg}
+              title="State"
+              description="Data managed within a component."
+            />
+          </ul>
+        </section>
         <h2>Time to get started!</h2>
       </main>
     </div>
