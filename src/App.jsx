@@ -1,80 +1,18 @@
-const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
-import reactImage from './assets/react-core-concepts.png';
 
 import componentsImg1 from './assets/components.png';
 import propsImg1 from './assets/config.png';
 import jsxImg1 from './assets/jsx-ui.png';
 import stateImg1 from './assets/state-mgmt.png';
-
 import {CORE_CONCEPTS} from './data.js';
 
-function genRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
+import Header from './components/Header/Header.jsx';
+import {CoreConceptsV1, CoreConceptsV2, CoreConceptsV3, CoreConceptsV4} from './components/CoreConcepts/CoreConcepts.jsx';
 
-const propSyntax = 5;
+const propSyntax = 1;
 // can pass default value in prop e.g.
   /*export default function Button({ caption, type = "submit" }) { 
     // caption has no default value, type has a default value of "submit"
   }*/
-
-function Header() {
-  const description = reactDescriptions[genRandomInt(2)];
-  return (
-    <header>
-      <img src={reactImage} alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        {description} React concepts you will need for almost any app you are
-        going to build!
-      </p>
-    </header>
-  );
-}
-
-function CoreConceptsV1(props) {
-  return (
-    <li>
-      <img src={props.image} alt={props.title} />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
-    </li>
-  );
-}
-
-function CoreConceptsV2({image, title, description}) {
-  return (
-    <li>
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </li>
-  );
-}
-
-function CoreConceptsV3({concept}) {
-  return (
-    <li>
-      <img src={concept.image} alt={concept.title} />
-      <h3>{concept.title}</h3>
-      <p>{concept.description}</p>
-    </li>
-  );
-}
-
-function CoreConceptsV4({...concept}) {
-
-  //can use these instead of concept.image etc
-  const {image, title, description} = concept;
-
-  return (
-    <li>
-      <img src={concept.image} alt={concept.title} />
-      <h3>{concept.title}</h3>
-      <p>{concept.description}</p>
-    </li>
-  );
-}
 
 
 function App() {
@@ -149,6 +87,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
