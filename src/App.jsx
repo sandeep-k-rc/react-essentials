@@ -7,6 +7,7 @@ import {CORE_CONCEPTS} from './data.js';
 
 import Header from './components/Header/Header.jsx';
 import {CoreConceptsV1, CoreConceptsV2, CoreConceptsV3, CoreConceptsV4} from './components/CoreConcepts/CoreConcepts.jsx';
+import TabButtons from './components/TabButtons/TabButtons.jsx';
 
 const propSyntax = 1;
 // can pass default value in prop e.g.
@@ -82,7 +83,12 @@ function App() {
           }
         </ul>
         </section>
-
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButtons>Components</TabButtons>
+          </menu>
+        </section>
       </main>
     </div>
   );
