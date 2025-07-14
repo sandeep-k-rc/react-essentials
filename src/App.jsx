@@ -1,4 +1,5 @@
 
+import {useState} from 'react';
 import componentsImg1 from './assets/components.png';
 import propsImg1 from './assets/config.png';
 import jsxImg1 from './assets/jsx-ui.png';
@@ -8,6 +9,7 @@ import {CORE_CONCEPTS} from './data.js';
 import Header from './components/Header/Header.jsx';
 import {CoreConceptsV1, CoreConceptsV2, CoreConceptsV3, CoreConceptsV4} from './components/CoreConcepts/CoreConcepts.jsx';
 import TabButtons from './components/TabButtons/TabButtons.jsx';
+import { EXAMPLES } from './data.js'; 
 
 const propSyntax = 1;
 // can pass default value in prop e.g.
@@ -18,8 +20,13 @@ const propSyntax = 1;
 
 function App() {
 
+
+    const [selectedTab, setSelectedTab] = useState("components");
+
     function handleSelect(tabName) {
-        console.log("Tab clicked:", tabName);
+        
+        setSelectedTab(tabName);
+        console.log(selectedTab);
     }
 
   return (
@@ -91,11 +98,20 @@ function App() {
         <section id="examples">
           <h2>Examples</h2> 
           <menu>
-            <TabButtons onSelect={() => handleSelect("Components")}>Components</TabButtons>
-            <TabButtons onSelect={() => handleSelect("JSX")}>JSX</TabButtons>
-            <TabButtons onSelect={() => handleSelect("Props")}>Props</TabButtons>
-            <TabButtons onSelect={() => handleSelect("State")}>State</TabButtons>
+            <TabButtons onSelect={() => handleSelect("components")}>Components</TabButtons>
+            <TabButtons onSelect={() => handleSelect("jsx")}>JSX</TabButtons>
+            <TabButtons onSelect={() => handleSelect("props")}>Props</TabButtons>
+            <TabButtons onSelect={() => handleSelect("state")}>State</TabButtons>
           </menu>
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedTab].title}</h3>
+            <p>{EXAMPLES[selectedTab].description}</p>
+            <pre>
+                <code>
+                  {EXAMPLES[selectedTab].code}
+                </code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
