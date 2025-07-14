@@ -17,6 +17,11 @@ const propSyntax = 1;
 
 
 function App() {
+
+    function handleSelect() {
+        console.log("Tab clicked:");
+    }
+
   return (
     <div>
       <Header />
@@ -84,12 +89,12 @@ function App() {
         </ul>
         </section>
         <section id="examples">
-          <h2>Examples</h2>
+          <h2>Examples</h2> 
           <menu>
-            <TabButtons>Components</TabButtons>
-            <TabButtons>JSX</TabButtons>
-            <TabButtons>Props</TabButtons>
-            <TabButtons>State</TabButtons>
+            <TabButtons onSelect={handleSelect}>Components</TabButtons>
+            <TabButtons onSelect={handleSelect}>JSX</TabButtons>
+            <TabButtons onSelect={handleSelect}>Props</TabButtons>
+            <TabButtons onSelect={handleSelect}>State</TabButtons>
           </menu>
         </section>
       </main>
