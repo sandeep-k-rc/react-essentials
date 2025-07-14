@@ -87,6 +87,9 @@ function App() {
           <h2>Examples</h2>
           <menu>
             <TabButtons>Components</TabButtons>
+            <TabButtons>JSX</TabButtons>
+            <TabButtons>Props</TabButtons>
+            <TabButtons>State</TabButtons>
           </menu>
         </section>
       </main>
