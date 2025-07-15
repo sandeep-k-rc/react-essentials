@@ -17,16 +17,31 @@ const propSyntax = 1;
     // caption has no default value, type has a default value of "submit"
   }*/
 
-
 function App() {
 
 
-    const [selectedTab, setSelectedTab] = useState("components");
+    const [selectedTab, setSelectedTab] = useState();
 
     function handleSelect(tabName) {
         
         setSelectedTab(tabName);
         console.log(selectedTab);
+    }
+
+    let tabContent = <p>Select a topic</p>;
+
+    if(selectedTab) {
+      tabContent = (
+        <div>
+          <h3>{EXAMPLES[selectedTab].title}</h3>
+          <p>{EXAMPLES[selectedTab].description}</p>
+          <pre>
+            <code>
+              {EXAMPLES[selectedTab].code}
+            </code>
+          </pre>
+        </div>
+      );
     }
 
   return (
@@ -103,15 +118,7 @@ function App() {
             <TabButtons onSelect={() => handleSelect("props")}>Props</TabButtons>
             <TabButtons onSelect={() => handleSelect("state")}>State</TabButtons>
           </menu>
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectedTab].title}</h3>
-            <p>{EXAMPLES[selectedTab].description}</p>
-            <pre>
-                <code>
-                  {EXAMPLES[selectedTab].code}
-                </code>
-            </pre>
-          </div>
+          {tabContent}
         </section>
       </main>
     </div>
