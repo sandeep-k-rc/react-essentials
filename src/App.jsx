@@ -11,7 +11,7 @@ import {CoreConceptsV1, CoreConceptsV2, CoreConceptsV3, CoreConceptsV4} from './
 import TabButtons from './components/TabButtons/TabButtons.jsx';
 import { EXAMPLES } from './data.js'; 
 
-const propSyntax = 1;
+const propSyntax = 5;
 // can pass default value in prop e.g.
   /*export default function Button({ caption, type = "submit" }) { 
     // caption has no default value, type has a default value of "submit"
@@ -103,7 +103,7 @@ function App() {
             <>
             {/* Using map to iterate over the array of concepts */}
             {CORE_CONCEPTS.map((concept) => (
-              <CoreConceptsV2 key={concept.id} {...concept} />
+              <CoreConceptsV2 key={concept.title} {...concept} />
             ))}
           </>
           ):null
